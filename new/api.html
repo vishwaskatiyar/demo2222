@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Store API Project</title>
+  </head>
+
+  <body>
+    <h1>Products from Fake Store API</h1>
+    <div id="product-list"></div>
+
+    <script>
+      // console.log("Fake store API project");
+      // const container = document.getElementById("product-list");
+      // let API = "https://fakestoreapi.com/products";
+      // fetch(API)
+      //     .then((response) => response.json())
+      //     .then((data) => {
+      //         data.map((dataItem) => {
+      //             let div = document.createElement("div");
+      //             div.innerHTML = `
+      //             <h1>${dataItem.title}</h1>
+      //             <h1>${dataItem.description}</h1>
+      //             <h1>${dataItem.price}</h1>
+      //             `;
+      //             container.appendChild(div);
+
+      //         })
+      //     })
+
+      let arr = [1, 2, 3, 4, 5, 6, 17, 8, 9, 10, 11];
+
+      let sum = arr.reduce((accert, curentval) => accert + curentval, 0);
+      console.log(sum);
+
+      let findmax = () => {
+        return Math.max(...arr);
+      };
+
+      let findeven = () => {
+        let rev = arr.filter((num) => num % 2 === 0);
+        return rev;
+      };
+      console.log(findeven());
+      console.log(findmax());
+
+      let string = "skaka";
+      let pal = () => {
+        let str = string.split("").reverse().join("");
+        if (str === string) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+      let rev = () => {
+        let str = string.split("").reverse().join("");
+        return str;
+      };
+      console.log(rev());
+      console.log(pal());
+
+      let num = 5;
+      let factorial = (num) => {
+        if (num === 0 || num === 1) return 1;
+        else {
+          return num * factorial(num - 1);
+        }
+      };
+      console.log(factorial(num));
+
+      let str = "hello";
+      let count = 0;
+
+      str.split("").forEach((char) => {
+        count++;
+      });
+      console.log(count);
+      count = 0;
+      for (const char of str) {
+        count++;
+      }
+
+      arr1 = [1, 1, 12, 2, 2, 4, 4, 5, 6, 7, 8, 8, 7];
+      function unique(arr1) {
+        return [...new Set(arr1)];
+      }
+
+      function removeduplicate(arr1) {
+        return Array.from(new Set(arr1));
+      }
+      function Sorting(arr1) {
+        return arr1.sort((a, b) => a - b);
+      }
+      console.log(Sorting(arr1));
+      console.log(removeduplicate(arr1));
+      console.log(count);
+      console.log(unique(arr1));
+
+      function generateString(length) {
+        let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        let result = "";
+        for (let i = 0; i < length; i++) {
+          const val = Math.floor(Math.random() * str.length);
+          result += str.charAt(val);
+        }
+        return result;
+      }
+      console.log(generateString(10));
+
+      let arr2 = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
+        39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+      ];
+
+      let sum1 = 0;
+
+      arr2.forEach((a) => {
+        sum1 = sum1 + a;
+      });
+
+      let average = sum1 / arr2.length;
+      console.log(average);
+
+      function secondHighest() {
+        let arr3 = arr2.sort((a, b) => b - a);
+        return arr3[0];
+      }
+
+      function secondlargest() {
+        let arr3 = arr2.sort((a, b) => a - b);
+        return arr3[0];
+      }
+      function maxdiff() {
+        let max = secondHighest();
+        let min = secondlargest();
+        let diff = max - min;
+        return diff;
+      }
+
+      console.log(secondHighest());
+      console.log(`This is the max difference: ${maxdiff()}`);
+
+      function multiply(a) {
+        return function (b) {
+          return a * b;
+        };
+      }
+      console.log(multiply(2)(10));
+
+      (function () {
+        var a = (b = 5);
+      })();
+      console.log(b);
+    </script>
+  </body>
+</html>

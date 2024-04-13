@@ -1,0 +1,61 @@
+-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #longText {
+            overflow: hidden;
+            max-height: 80px;
+            transition: max-height 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="longText">
+        This is a long paragraph that you can expand or collapse using the "Read
+        More" button Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aliquid eaque quod architecto amet,
+        quis voluptatum necessitatibus consequuntur iusto, non delectus numquam nostrum repellat similique fugiat sunt
+        explicabo voluptatem debitis reiciendis impedit in! Cum expedita et odit repellendus eveniet fugit eum numquam
+        reprehenderit deserunt perspiciatis ab eaque sapiente laborum ducimus, fuga, beatae at aut itaque assumenda!
+        Quaerat mollitia qui nam, assumenda a laudantium eum perferendis sed odit quas ad itaque impedit, vitae
+        nesciunt? Alias quidem illo voluptas vitae ea ad numquam aliquam vero architecto provident perspiciatis omnis
+        optio necessitatibus dolores laboriosam, iure in dolor exercitationem tempore aliquid expedita maxime
+        asperiores?
+        quis voluptatum necessitatibus consequuntur iusto, non delectus numquam nostrum repellat similique fugiat sunt
+        explicabo voluptatem debitis reiciendis impedit in! Cum expedita et odit repellendus eveniet fugit eum numquam
+        reprehenderit deserunt perspiciatis ab eaque sapiente laborum ducimus, fuga, beatae at aut itaque assumenda!
+        Quaerat mollitia qui nam, assumenda a laudantium eum perferendis sed odit quas ad itaque impedit, vitae
+        nesciunt? Alias quidem illo voluptas vitae ea ad numquam aliquam vero architecto provident perspiciatis omnis
+        optio necessitatibus dolores laboriosam, iure in dolor exercitationem tempore aliquid expedita maxime
+        asperiores?
+    </p>
+    <button id="readMoreButton">Read More</button>
+
+    <script>
+        const readMoreButton = document.querySelector("#readMoreButton");
+        const longText = document.querySelector("#longText")
+
+        let readMore = () => {
+            if (longText.style.maxHeight) {
+                longText.style.maxHeight = null;
+                readMoreButton.textContent = 'Read More';
+            } else {
+                longText.style.maxHeight = longText.scrollHeight + 'px';
+                readMoreButton.textContent = 'Read Less';
+            }
+
+        }
+
+        readMoreButton.addEventListener("click", readMore)
+
+
+    </script>
+    <script src="question.js"></script>
+</body>
+
+</html>

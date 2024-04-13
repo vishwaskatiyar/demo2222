@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Length Calculator</title>
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        #length {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="inputText">Enter text:</label>
+        <input type="text" id="inputText" oninput="calculateLength()">
+        <p id="length">Length: 0</p>
+    </div>
+    <script>
+        function calculateLength() {
+            var inputText = document.getElementById("inputText").value;
+            var length = inputText.length;
+            document.getElementById("length").innerText = "Length: " + length;
+        }
+    </script>
+</body>
+
+</html>
